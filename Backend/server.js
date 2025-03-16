@@ -9,6 +9,9 @@ connectDb();
 app.use(express.json());
 app.use(cors());
 app.use(express.static("public"))
+app.use(cors({
+  origin: 'https://food-recipe-frontend-niqy.onrender.com'
+}));
 
 app.use("/", require("./routes/user"));
 app.use("/recipe", require("./routes/recipe"));
