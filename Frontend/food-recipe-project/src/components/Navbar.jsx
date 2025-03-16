@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Modal from './Modal';
-import InputForm from './inputForm';
+import InputForm from './InputForm';
 import { Link } from 'react-router-dom';
 import { FiMenu } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
