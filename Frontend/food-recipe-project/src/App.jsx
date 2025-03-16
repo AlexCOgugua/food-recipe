@@ -10,7 +10,7 @@ import RecipeItems from './components/RecipeItems';
 
 const getAllRecipes = async () => {
   let allRecipes =[]
-  await axios.get('http://localhost:5000/recipe')
+  await axios.get('https://food-recipe-backend-d2v1.onrender.com/recipe')
   .then((res) => {
     allRecipes = res.data
   })
@@ -29,10 +29,10 @@ const getFavRecipe =()=>{
 
 const getRecipe=async({params})=>{
   let recipe;
-  await axios.get(`http://localhost:5000/recipe/${params.id}`)
+  await axios.get(`https://food-recipe-backend-d2v1.onrender.com/recipe/${params.id}`)
   .then(res=>recipe=res.data)
 
-  await axios.get(`http://localhost:5000/user/${recipe.createdBy}`)
+  await axios.get(`https://food-recipe-backend-d2v1.onrender.com/user/${recipe.createdBy}`)
   .then(res=>{
     recipe={...recipe,email:res.data.email}
   })
