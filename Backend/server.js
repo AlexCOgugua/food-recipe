@@ -4,13 +4,15 @@ const dotenv = require("dotenv").config();
 const connectDb = require("./config/connectionDb");
 const cors = require("cors");
 const PORT = process.env.PORT || 3000;
+const path = require('path');
 
 connectDb();
 app.use(express.json());
 app.use(cors());
-app.use(express.static("public"))
+// app.use(express.static("public"))
+app.use('/images', express.static(path.join(__dirname, 'public', 'images')));
 app.use(cors({
-  origin: 'https://food-recipe-frontend-niqy.onrender.com'
+  origin: '*'
 }));
 
 app.use("/", require("./routes/user"));
